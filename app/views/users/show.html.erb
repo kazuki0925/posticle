@@ -2,7 +2,7 @@
   <h1><%= @user.nickname %>さんのページ</h1>
 </div>
 
-<% if @user.id == current_user.id %>
+<% if user_signed_in? && @user.id == current_user.id %>
   <div class="user-profile">
     <h2 class="table-name">ユーザー情報</h2>
     <%= link_to "編集", edit_user_path(@user), class: "user-edit-link" %>
