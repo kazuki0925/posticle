@@ -25,5 +25,34 @@
       <p><%= @article.text %></p>
     </div>
 
+    <div class="article-comments-content">
+      <% if user_signed_in? %>
+        <div class="comment-content-form">
+          <%= form_with model: @comment, url: article_comments_path(@article), local: true do |f| %>
+            <%= render 'shared/error_messages', model: f.object %>
+            <p>この記事に対するコメントを書く</p>
+            <%= f.text_area :text, class:"input-article-comment", placeholder:"コメントを入力", rows:"5", maxlength:"250", wrap:"soft"%>
+            <%= f.submit "コメントを送信", class:"comment-submit-btn" %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% if @comments.length != 0 %>
+        <h2 class="comment-title">コメント</h2>
+        <ul class=comment-lists>
+          <% @comments.each do |comment| %>
+            <li class=comment-list>
+            <p><%= comment.text %></p>
+            <p class="comment-user-name"><%= comment.user.nickname %>さん</p>
+              <% if user_signed_in? && comment.user_id == current_user.id %>
+              <%= link_to "コメントを削除", "/articles/#{@article.id}/comments/#{comment.id}", method: :delete, class: "comment-delete" %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>この記事に対するコメントはまだありません</p>
+      <% end %>
+    </div>
   </div>
 </div>

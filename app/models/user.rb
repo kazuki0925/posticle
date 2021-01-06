@@ -9,5 +9,6 @@ class User < ApplicationRecord
   validates :password, format: { with: PASSWORD_REGEX, message: 'は英数字混合で入力してください' }, on: :create
 
   has_many :articles, dependent: :destroy
-       
+  has_many :comments, dependent: :destroy
+
 end
