@@ -13,7 +13,7 @@
       <% end %>
 
       <div class="article-middle">
-        <p class="article-user"><%= link_to "by #{article.user.nickname}", "#" %></p>
+        <p class="article-user"><%= link_to "by #{article.user.nickname}", user_path(article.user) %></p>
       </div>
       <p class=article-category>カテゴリー：<%= article.category[:name]%></p>
     </li>
