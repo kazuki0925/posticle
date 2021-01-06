@@ -1,0 +1,21 @@
+<ul class="articles-lists">
+  <% articles.each do |article| %>
+    <li class="article-list">
+      <%= link_to "#" do %>
+        <div class="article-image-content">
+          <% if article.image.attached? %>
+            <%= image_tag article.image, class: "article-image", alt: "article-image" %>
+          <% else %>
+            <%= image_tag "sample_img.jpg", class: "article-image", alt: "article-image" %>
+          <% end %>
+        </div>
+        <p class="article-title"><%= article.title.truncate(27) %></p>
+      <% end %>
+
+      <div class="article-middle">
+        <p class="article-user"><%= link_to "by #{article.user.nickname}", "#" %></p>
+      </div>
+      <p class=article-category>カテゴリー：<%= article.category[:name]%></p>
+    </li>
+  <% end %>      
+</ul>
