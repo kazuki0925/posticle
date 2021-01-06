@@ -1,3 +1,158 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// index.html.erbの記事一覧
+.article-new-btn {
+  height: 130px;
+  width: 130px;
+  position: fixed;
+  top: 125px;
+  right: 40px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.8;
+}
+
+.article-new-text {
+  font-size: 23px;
+  position: fixed;
+  top: 130px;
+  right: 55px;
+  font-family: 'Londrina Shadow', cursive;
+  font-weight: bold;
+  color: rgb(58, 171, 210);
+
+}
+
+.article-new-img {
+  height: 100px;
+  position: fixed;
+  top: 150px;
+  right: 50px;
+}
+
+.non-message {
+  padding-bottom: 50px;
+}
+
+// new.html.erbの新規記事投稿画面
+.input-articles {
+  width: 80vw;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 0;
+}
+
+.article-form {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.article-form h3{
+  margin-bottom: 5px;
+}
+
+.input-article-title {
+  width: 100%;
+  padding: 5px;
+}
+
+.input-article-text {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 50px;
+}
+
+.submit-article-btn {
+  width: 80vw;
+  background-color: #4169e1;
+  height: 50px;
+  position: fixed;
+  bottom: 20px;
+  left: 10vw;
+  z-index: 1;
+  opacity: 0.8;
+  font-weight: bold;
+  border: none;
+  font-size: 20px;
+  color: white;
+}
+
+// 記事詳細表示画面
+.user-edit-img {
+  height: 70px;
+  position: fixed;
+  top: 100px;
+  right: 20px;
+}
+
+.user-delete-img {
+  height: 70px;
+  position: fixed;
+  top: 200px;
+  right: 20px;
+}
+
+
+.user-good-img {
+  height: 70px;
+  position: fixed;
+  top: 200px;
+  right: 20px;
+}
+
+.user-bad-img {
+  height: 70px;
+  position: fixed;
+  top: 300px;
+  right: 20px;
+  transform: scale(-1, 1);
+}
+
+.article-cover-img {
+  background-color: gray;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-img {
+  width: 100%;
+}
+
+.article-main {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.show-article-title {
+  font-size: 30px;
+  text-align: center;
+}
+
+.article-text {
+  font-size: 20px;
+  margin: 20px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid gray;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+// 記事検索結果画面
+.search-result {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.search-result-index ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 70vw;
+  margin: 0 auto;
+}

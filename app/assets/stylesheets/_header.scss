@@ -1,0 +1,177 @@
+header {
+  height: 90px;
+  width: 100vw;
+  background-color: #191970;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.header-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#img-menu-icon {
+  height: 50px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+#modal-menu {
+  display: none;
+  position: fixed;
+  top: 90px;
+  left: 0px;
+  font-size: 20px;
+  background-color: #191970;
+  opacity: 0.8;
+  color: white;
+  padding: 10px;
+  height: 600px;
+  width: 220px;
+}
+
+#modal-menu h3{
+  font-weight: bold;
+  border-bottom: 1px solid white;
+  margin-bottom: 5px;
+}
+
+.category-list li {
+  padding-bottom: 15px;
+}
+
+.category-link {
+  color: white;
+}
+
+.header-logo {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Londrina Shadow', cursive;
+}
+
+.header-logo:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.header-right {
+  display: flex;
+}
+
+.header-right-list {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding-right: 20px;
+}
+
+.search-input {
+  width: 450px;
+  height: 45px;
+  border-radius: 30px;
+  padding-left: 10px;
+  border: 1px solid gray;
+}
+
+.search-btn {
+  width: 90px;
+  height: 45px;
+  border-radius: 30px;
+  border: 1px solid gray;
+}
+
+#search-image {
+  display: none;
+}
+
+.search-modal {
+  display: none;
+}
+
+ /* タブレット表示時 */
+ @media (max-width: 1024px) {
+  header {
+    height: 70px;
+  }
+    
+  #img-menu-icon {
+    height: 40px;
+  }
+  
+  #modal-menu {
+    top: 70px;
+  }
+
+  .header-logo {
+    font-size: 35px;
+  }
+
+  #search-image {
+    display: block;
+    height: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .search-modal{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+  }
+  .modal-bg{
+      background-color: rgba(0,0,0,0.7);
+      height: 100vh;
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+  }
+  .search-modal-content{
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 2;
+  }
+
+  .header-right-list {
+    font-size: 18px;
+  }
+
+  .header-center {
+    display: none;
+  }
+
+  .search-input {
+    position: fixed;
+    top:calc(50% - 45px/2);
+    left:calc(50% - 450px/2);
+    z-index: 50;
+    width: 450px;
+    height: 45px;
+    border-radius: 30px;
+  }
+
+  .search-btn {
+    width: 90px;
+    height: 45px;
+    border-radius: 30px;
+    position: fixed;
+    top:calc(50% + 45px);
+    left:calc(50% - 90px/2);
+    z-index: 50;
+  }
+
+}
