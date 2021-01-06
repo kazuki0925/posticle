@@ -7,6 +7,12 @@
   <% end %>
 <% end %>
 
+<%= render partial: "favorites/favorite_btn", locals: { article: @article, favorite: @favorite} %>
+
+
+
+
+
 <div class="article-show-content">
   <div class="article-cover-img">
   <% if @article.image.attached? %>
@@ -26,6 +32,7 @@
     </div>
 
     <div class="article-comments-content">
+    
       <% if user_signed_in? %>
         <div class="comment-content-form">
           <%= form_with model: @comment, url: article_comments_path(@article), local: true do |f| %>

@@ -10,5 +10,9 @@ class User < ApplicationRecord
 
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
+  def favorite_by?(article_id)
+    favorites.where(article_id: article_id).exists?
+  end
 end
