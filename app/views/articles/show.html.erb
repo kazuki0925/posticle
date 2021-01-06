@@ -1,8 +1,8 @@
 <% if user_signed_in? && current_user.id == @article.user_id %>
-  <%= link_to "#" do %>
+  <%= link_to edit_article_path(@article) do %>
     <%= image_tag "edit_img.png", class: "user-edit-img" %>
   <% end %>
-  <%= link_to "#", method: :delete do %>
+  <%= link_to article_path(@article), method: :delete do %>
     <%= image_tag "delete_img.png", class: "user-delete-img" %>
   <% end %>
 <% end %>
