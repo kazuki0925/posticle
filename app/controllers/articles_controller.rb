@@ -25,6 +25,26 @@ class ArticlesController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @article.update(article_params)
+      flash[:success] = '記事を更新しました'
+      redirect_to article_path(@article) 
+    else
+      flash.now[:alert] = '記事の更新に失敗しました'
+      render :edit
+    end
+  end
+
+  def destroy
+    @article.destroy
+    flash[:success] = '記事を削除しました'
+    redirect_to root_path
+  end
+
+
   private
   def article_params
     params.require(:article).permit(:title, :text, :image, :category_id).merge(user_id: current_user.id)
