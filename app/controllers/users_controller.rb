@@ -4,8 +4,13 @@ class UsersController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy] 
 
   def show
-    @user = User.find(params[:id])
     @articles = @user.articles
+    @favorites = @user.favorites
+    favorite_articles = []
+    @favorites.each do |favorite|
+      favorite_articles << favorite.article
+    end
+    @favorite_articles = favorite_articles
   end
 
   def edit
