@@ -1,8 +1,14 @@
-<% if user_signed_in? %>
-  <%= link_to current_user.nickname, "#", class: 'header-right-list' %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'header-right-list' %>
-  <%= link_to "新規投稿", new_article_path %>
-<% else %>
-  <%= link_to "ログイン", new_user_session_path, class: 'header-right-list' %>
-  <%= link_to "新規登録", new_user_registration_path, class: 'header-right-list' %>
+<div class="page-title">
+  <h1>新規投稿記事</h1>
+</div>
+<div class="top-page-index" id="new_articles_page">
+  <%= render partial: 'shared/article_contents', locals: {articles: @articles} %>
+</div>
+
+
+<%= link_to new_article_path do %>
+  <div class="article-new-btn">
+    <%= image_tag "article_new.png", class: "article-new-img", alt: "article-new-image" %>
+    <p class="article-new-text">New Article</p>
+  </div>
 <% end %>
