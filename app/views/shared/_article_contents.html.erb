@@ -1,7 +1,7 @@
 <ul class="articles-lists">
   <% articles.each do |article| %>
     <li class="article-list">
-      <%= link_to "#" do %>
+      <%= link_to article_path(article) do %>
         <div class="article-image-content">
           <% if article.image.attached? %>
             <%= image_tag article.image, class: "article-image", alt: "article-image" %>
