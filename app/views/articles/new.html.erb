@@ -1,0 +1,33 @@
+<div class="page-title">
+  <h1>新規記事投稿</h1>
+</div>
+
+<div class="article-input-form">
+  <%= form_with model: @article, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="input-articles">
+      <div class="article-form">
+        <h3>タイトル</h3>
+        <%= f.text_field :title, class:"input-article-title", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
+      </div>
+
+      <div class="article-form">
+        <h3>カバー画像(任意)</h3>
+        <%= f.file_field :image, class: "cover-img-select" %>
+      </div>
+
+      <div class="article-form">
+        <h3>カテゴリ(任意)</h3>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+      </div>
+
+      <div class="article-form">
+        <h3>本文</h3>
+        <%= f.text_area :text, class:"input-article-text", id:"editor", placeholder:"本文", rows:"20", maxlength:"15000", wrap:"soft" %>
+      </div>
+
+      <%= f.submit "記事を投稿する", class:"submit-article-btn" %>
+    </div>
+  <% end %>
+</div>
