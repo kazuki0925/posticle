@@ -55,6 +55,12 @@ class ArticlesController < ApplicationController
     @articles = Article.search(params[:keyword])
   end
 
+  def category
+    @num = params[:id].to_i
+    @article = Article.find_by(category_id: params[:id])
+    @articles = Article.where(category_id: params[:id]).order("created_at DESC")
+  end
+
   private
   def article_params
     params.require(:article).permit(:title, :text, :image, :category_id).merge(user_id: current_user.id)

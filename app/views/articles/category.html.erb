@@ -1,0 +1,11 @@
+<div class="page-title">
+  <h1>カテゴリ：<%= Category.data[@num][:name] %></h1>
+</div>
+
+<div class="search-result-index">
+  <% if @articles.length != 0 %>
+    <%= render partial: 'shared/article_contents', locals: {articles: @articles} %>
+  <% else %>
+    <h1 class="search-result"><%= Category.data[@num][:name] %>に該当する記事は見つかりませんでした。</h1>
+  <% end %>
+</div>
