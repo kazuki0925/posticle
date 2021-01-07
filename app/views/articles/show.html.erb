@@ -9,9 +9,9 @@
 
 <%= render partial: "favorites/favorite_btn", locals: { article: @article, favorite: @favorite} %>
 
+<%= render partial: "good_evaluations/good_btn", locals: { article: @article, good_evaluation: @good_evaluation} %>
 
-
-
+<%= render partial: "bad_evaluations/bad_btn", locals: { article: @article, bad_evaluation: @bad_evaluation} %>
 
 <div class="article-show-content">
   <div class="article-cover-img">
