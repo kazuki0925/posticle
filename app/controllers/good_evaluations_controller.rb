@@ -8,13 +8,11 @@ class GoodEvaluationsController < ApplicationController
       @bad_evaluation = BadEvaluation.find_by(user_id: current_user.id, article_id: params[:article_id])
       @bad_evaluation.destroy
     end
-    redirect_to article_path(@article)
   end
 
   def destroy
     @good_evaluation = GoodEvaluation.find_by(user_id: current_user.id, article_id: params[:article_id])
     @good_evaluation.destroy
-    redirect_to article_path(@article)
   end
 
   private
