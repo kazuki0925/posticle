@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update]
+  resources :relationships, only: [:create, :destroy]
 
 
 end
