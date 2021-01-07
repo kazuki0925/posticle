@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy] 
 
   def show
-    @articles = @user.articles
+    @user_articles = @user.articles
     @favorites = @user.favorites
     favorite_articles = []
     @favorites.each do |favorite|

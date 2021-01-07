@@ -2,7 +2,7 @@
   <h1><%= @user.nickname %>さんのページ</h1>
 </div>
 
-<% if user_signed_in? && @user.id == current_user.id %>
+<% if @user.id == current_user.id %>
   <div class="user-profile">
     <h2 class="table-name">ユーザー情報</h2>
     <%= link_to "編集", edit_user_path(@user), class: "user-edit-link" %>
@@ -22,31 +22,46 @@
       <p><%= @user.email %></p>
     </div>
 
+    <div class="user-profile-list">
+      <h2>フォロー数</h2>
+      <p id="follow-link"><%= @user.followings.length %>フォロー</p>
+      <div class="follow-modal">
+        <%= render partial: "user_following_list", locals: {user: @user} %>
+      </div>
+    </div>
+
+    <div class="user-profile-list">
+      <h2>フォロワー数</h2>
+      <p id="follower-link"><%= @user.followers.length %>フォロワー</p>
+      <div class="follower-modal">
+        <%= render partial: "user_follower_list", locals: {user: @user} %>
+      </div>
+    </div>
   </div>
 <% else %>
-
+  <%= render partial: "relationships/follow_btn", locals: {user: @user} %>
 <% end %>
 
 <div class="user-articles-content">
   <h2><%= @user.nickname %>さんが投稿した記事</h2>
-    <% if @articles.length != 0 %>
+    <% if @user_articles.length != 0 %>
       <div class="top-page-index" id="user_articles_page">
-        <%= render partial: 'shared/article_contents', locals: {articles: @articles} %>
+        <%= render partial: 'shared/article_contents', locals: {articles: @user_articles} %>
       </div>
     <% else %>
       <p class="non-message">投稿された記事はありません</p>
     <% end %>
 </div>
 
-<% if user_signed_in? && @user.id == current_user.id %>
-  <div class="user-articles-content">
-    <h2><%= @user.nickname %>さんがお気に入りした記事</h2>
-      <% if @favorite_articles.length != 0 %>
-        <div class="top-page-index" id="favorite_articles_page">
-          <%= render partial: 'shared/article_contents', locals: {articles: @favorite_articles} %>
-        </div>
-      <% else %>
-        <p class="non-message">お気に入りした記事はありません</p>
-      <% end %>
-  </div>
+<% if @user.id == current_user.id %>
+<div class="user-articles-content">
+  <h2><%= @user.nickname %>さんがお気に入りした記事</h2>
+    <% if @favorite_articles.length != 0 %>
+      <div class="top-page-index" id="favorite_articles_page">
+        <%= render partial: 'shared/article_contents', locals: {articles: @favorite_articles} %>
+      </div>
+    <% else %>
+      <p class="non-message">お気に入りした記事はありません</p>
+    <% end %>
 <% end %>
+</div>
