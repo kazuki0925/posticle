@@ -5,6 +5,13 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.includes(:user).order("created_at DESC")
+    @new_articles = Article.includes(:user).order("created_at DESC")
+    @favorites = Article.find(Favorite.group(:article_id).order('count(article_id) DESC').pluck(:article_id))
+    @favorite_articles = Article.find(Favorite.group(:article_id).order('count(article_id) DESC').pluck(:article_id))
+    articles_evaluation = []
+    Article.evaluation(articles_evaluation, @articles)
+    @goods = articles_evaluation.sort_by{ |a| -a[:score] }.sort_by{ |a| -a[:count] }.pluck(:name)
+    @good_articles = articles_evaluation.sort_by{ |a| -a[:score] }.sort_by{ |a| -a[:count] }.pluck(:name)
   end
 
   def new
