@@ -48,6 +48,9 @@
       <div class="top-page-index" id="user_articles_page">
         <%= render partial: 'shared/article_contents', locals: {articles: @user_articles} %>
       </div>
+      <div id="user_articles_page_btn">
+        <%= paginate @user_articles, param_name: "user_articles_page", remote: true %>
+      </div>
     <% else %>
       <p class="non-message">投稿された記事はありません</p>
     <% end %>
@@ -59,6 +62,9 @@
     <% if @favorite_articles.length != 0 %>
       <div class="top-page-index" id="favorite_articles_page">
         <%= render partial: 'shared/article_contents', locals: {articles: @favorite_articles} %>
+      </div>
+      <div id="favorite_articles_page_btn">
+        <%= paginate @favorite_articles, param_name: "favorite_articles_page", remote: true %>
       </div>
     <% else %>
       <p class="non-message">お気に入りした記事はありません</p>

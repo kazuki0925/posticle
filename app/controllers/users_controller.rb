@@ -4,13 +4,13 @@ class UsersController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy] 
 
   def show
-    @user_articles = @user.articles
+    @user_articles = Kaminari.paginate_array(@user.articles).page(params[:user_articles_page]).per(3)
     @favorites = @user.favorites
     favorite_articles = []
     @favorites.each do |favorite|
       favorite_articles << favorite.article
     end
-    @favorite_articles = favorite_articles
+    @favorite_articles = Kaminari.paginate_array(favorite_articles).page(params[:favorite_articles_page]).per(3)
   end
 
   def edit

@@ -5,13 +5,23 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.includes(:user).order("created_at DESC")
-    @new_articles = Article.includes(:user).order("created_at DESC")
+    @new_articles = Kaminari.paginate_array(@articles).page(params[:new_articles_page]).per(3)
     @favorites = Article.find(Favorite.group(:article_id).order('count(article_id) DESC').pluck(:article_id))
-    @favorite_articles = Article.find(Favorite.group(:article_id).order('count(article_id) DESC').pluck(:article_id))
+    @favorite_articles = Kaminari.paginate_array(@favorites).page(params[:favorite_articles_page]).per(3)
     articles_evaluation = []
     Article.evaluation(articles_evaluation, @articles)
     @goods = articles_evaluation.sort_by{ |a| -a[:score] }.sort_by{ |a| -a[:count] }.pluck(:name)
-    @good_articles = articles_evaluation.sort_by{ |a| -a[:score] }.sort_by{ |a| -a[:count] }.pluck(:name)
+    @good_articles = Kaminari.paginate_array(@goods).page(params[:good_articles_page]).per(3)
+    if user_signed_in?
+      follow_users = current_user.followings
+      follow_users_articles = []
+      follow_users.each do |follow_user|
+        follow_user.articles.each do |follow_user_article|
+          follow_users_articles << follow_user_article
+        end
+      end
+      @follow_users_articles = Kaminari.paginate_array(follow_users_articles).page(params[:follow_users_articles_page]).per(3)
+    end
   end
 
   def new
