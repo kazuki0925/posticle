@@ -2,9 +2,22 @@
   <h1>新規投稿記事</h1>
 </div>
 <div class="top-page-index" id="new_articles_page">
-  <%= render partial: 'shared/article_contents', locals: {articles: @articles} %>
+  <%= render partial: 'shared/article_contents', locals: {articles: @new_articles} %>
 </div>
 
+<div class="page-title">
+  <h1>人気記事</h1>
+</div>
+<div class="top-page-index" id="favorite_articles_page">
+  <%= render partial: 'shared/article_contents', locals: {articles: @favorite_articles} %>
+</div>
+
+<div class="page-title">
+  <h1>評価の高い記事</h1>
+</div>
+<div class="top-page-index" id="good_articles_page">
+  <%= render partial: 'shared/article_contents', locals: {articles: @good_articles} %>
+</div>
 
 <%= link_to new_article_path do %>
   <div class="article-new-btn">
