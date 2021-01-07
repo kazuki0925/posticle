@@ -7,5 +7,7 @@ $('#favorite_articles_page_btn').html("<%= escape_javascript(paginate @favorite_
 $('#good_articles_page').html("<%= escape_javascript(render partial: 'shared/article_contents', locals: {articles: @good_articles}) %>");
 $('#good_articles_page_btn').html("<%= escape_javascript(paginate @good_articles, param_name: "good_articles_page", remote: true) %>");
 
+<% if user_signed_in? %>
 $('#follow_users_articles_page').html("<%= escape_javascript(render partial: 'shared/article_contents', locals: {articles: @follow_users_articles}) %>");
 $('#follow_users_articles_page_btn').html("<%= escape_javascript(paginate @follow_users_articles, param_name: "follow_users_articles_page", remote: true) %>");
+<% end %>

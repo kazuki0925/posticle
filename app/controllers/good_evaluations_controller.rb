@@ -1,6 +1,6 @@
 class GoodEvaluationsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :destroy]
-  before_action :set_article, only: [:create, :destroy]
+  before_action :authenticate_user!
+  before_action :set_article
 
   def create
     @good_evaluation = GoodEvaluation.create(user_id: current_user.id, article_id: params[:article_id])
