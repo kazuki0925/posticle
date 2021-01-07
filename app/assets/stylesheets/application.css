@@ -26,7 +26,9 @@
 
 body {
   position: relative;
-  z-index: -1;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
 }
 
 .page-title h1{
@@ -61,7 +63,9 @@ p {
   width: 100vw;
   height: calc(100% - 90px - 200px);
   margin-top: 90px;
+  padding-bottom: 30px;
   background-color: ghostwhite;
+  flex: 1
 }
 
 #modal-overlay {
