@@ -8,7 +8,7 @@
           <div class="follow-list-icon">
             <%= image_tag "profile_icon.png", class: "list-profile-icon", alt: "profile-icon" %>
           </div>
-          <h2><%= following.nickname%></h2>
+          <h2><%= follower.nickname%></h2>
           <%= render partial: "relationships/follow_btn_small", locals: {user: follower} %>
         </li>
       <% end %>
