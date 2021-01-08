@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     member do
       get 'category'
     end
+    collection do
+      post 'attach'
+    end
   end
 
   resources :users, only: [:show, :edit, :update]

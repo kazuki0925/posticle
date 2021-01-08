@@ -39,6 +39,11 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def attach
+    attachment = Attachment.create! image: params[:image]
+    render json: { filename: url_for(attachment.image.variant(resize: '480x270')) }
+  end
+
   def show
     @comment = Comment.new
     @comments = @article.comments.includes(:user)
