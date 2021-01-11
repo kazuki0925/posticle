@@ -19,4 +19,16 @@
       <%= f.submit "更新", class: "action-btn" %>
     </div>
   <% end %>
+  <p class="user-modal-open">アカウントを削除する</p>
+  <div class="delete-user-modal">
+    <div class="modal-bg delete-user-modal-close"></div>
+    <div class="delete-user-modal-content">
+      <h2>本当に削除しますか？</h2>
+      <p>※これまで投稿した記事も全て削除されます。</p>
+      <div class="delete-user-content-btn">
+        <%= link_to "アカウント削除", user_path(@user), method: :delete %>
+        <a class="delete-user-modal-close">戻る</a>
+      </div>
+    </div>
+  </div>
 </div>

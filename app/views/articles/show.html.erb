@@ -2,9 +2,17 @@
   <%= link_to edit_article_path(@article) do %>
     <%= image_tag "edit_img.png", class: "user-edit-img" %>
   <% end %>
-  <%= link_to article_path(@article), method: :delete do %>
     <%= image_tag "delete_img.png", class: "user-delete-img" %>
-  <% end %>
+    <div class="delete-modal">
+      <div class="modal-bg delete-modal-close"></div>
+      <div class="delete-modal-content">
+        <h2>記事を削除しますか？</h2>
+        <div class="delete-content-btn">
+          <%= link_to "はい", article_path(@article), method: :delete %>
+          <a class="delete-modal-close">戻る</a>
+        </div>
+      </div>
+    </div>
 <% end %>
 
 <%= render partial: "favorites/favorite_btn", locals: { article: @article, favorite: @favorite} %>
