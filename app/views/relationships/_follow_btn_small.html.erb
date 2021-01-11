@@ -1,4 +1,4 @@
-<div class="follows-small">
+<div class="follows-small" id="follows-small-<%=user.id%>">
   <% if current_user.following?(user) %>
     <%= form_with url: relationship_path(user), method: :delete, remote: true do |f| %>
       <%= hidden_field_tag :follow_id, user.id %>
