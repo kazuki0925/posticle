@@ -14,7 +14,8 @@
 
       <div class="article-form">
         <h3>カバー画像(任意)</h3>
-        <%= f.file_field :image, class: "cover-img-select" %>
+        <%= f.file_field :image %>
+        <div id="cover-img-preview"></div>        
       </div>
 
       <div class="article-form">

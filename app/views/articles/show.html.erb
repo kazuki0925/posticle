@@ -15,6 +15,10 @@
     </div>
 <% end %>
 
+<div class="user-access">
+  <%= link_to "#{@article.user.nickname}さんの記事をもっと見る", user_path(@article.user) %>
+</div>
+
 <%= render partial: "favorites/favorite_btn", locals: { article: @article, favorite: @favorite} %>
 
 <%= render partial: "good_evaluations/good_btn", locals: { article: @article, good_evaluation: @good_evaluation} %>
