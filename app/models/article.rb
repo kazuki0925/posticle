@@ -16,7 +16,7 @@ class Article < ApplicationRecord
     if search != ""
       Article.where('text LIKE(?) OR title LIKE(?) OR category_id LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%")
     else
-      Article.all
+      Article.includes(:user).order("created_at DESC")
     end
   end
 
