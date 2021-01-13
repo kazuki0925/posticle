@@ -27,14 +27,14 @@ Eメール：taro@gmail.com
 - ユーザーフォロー機能（Ajax）
 
 # 実装した機能についてのGIFと説明
-### 記事投稿
-
-### 記事詳細表示
+### 記事投稿 & 記事詳細表示
+![article_new](https://user-images.githubusercontent.com/74653695/104407002-0877d280-55a4-11eb-93b7-4f29541183e5.gif)
 
 ### 記事編集
+![article_edit](https://user-images.githubusercontent.com/74653695/104407037-1594c180-55a4-11eb-808e-1281282c491e.gif)
 
 ### 記事削除
-
+![article_destroy](https://user-images.githubusercontent.com/74653695/104407091-31986300-55a4-11eb-8aad-b2e71a5b81d6.gif)
 
 # 実装予定の機能
 
