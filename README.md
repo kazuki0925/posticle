@@ -17,9 +17,9 @@ PosticleApp
 http://18.176.196.64/
 
 # テスト用アカウント
-Eメール：taro@gmail.com  
+Eメール：test@gmail.com  
 パスワード：123abc  
-ニックネーム：taro  
+ニックネーム：test  
 
 # 機能要件・非機能要件
 ### ユーザー新規登録 & ログイン機能
