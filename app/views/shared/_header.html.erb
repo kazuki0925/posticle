@@ -32,6 +32,14 @@
       </div>
     </div>
     <% if user_signed_in? %>
+      <%= link_to notifications_path do %>
+        <div class="notifications-link header-right-list">
+          <i class="fas fa-bell"></i>
+          <% if current_user.passive_notifications.where(checked: false).count != 0 %>
+          <div class='notifications-count'><%= current_user.passive_notifications.where(checked: false).count %></div>
+          <% end %>
+        </div>
+      <% end %>
       <%= link_to current_user.nickname, user_path(current_user), class: 'header-right-list' %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'header-right-list' %>
     <% else %>
