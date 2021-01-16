@@ -35,6 +35,13 @@
   </div>
 
   <div class="article-main">
+    <div class="show-article-date">
+      <p>投稿日 <%= l @article.created_at %></p>
+      <% if @article.created_at != @article.updated_at %>
+        <p>最終更新日 <%= l @article.updated_at %></p>
+      <% end %>
+    </div>
+
     <div class="show-article-title">
       <h1><%= @article.title %></h1>
     </div>

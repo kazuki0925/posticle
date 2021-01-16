@@ -1,0 +1,50 @@
+// Place all the styles related to the notifications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.notifications-link {
+  position: relative;
+}
+
+.fa-bell {
+  display: block;
+  color: white;
+  font-size: 30px;
+}
+
+.notifications-count{
+  background-color: red;
+  position: absolute;
+  top: -5px;
+  left: 15px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  padding-top: 2px;
+}
+
+.notifications-content {
+  width: 70vw;
+  margin: 10px auto;
+  background-color: white;
+  text-align: center;
+  padding: 0 50px;
+  box-shadow: 3px 3px 5px gray;
+}
+
+.notification-list {
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.notification-text {
+  font-size: 20px;
+}
+
+.time-stamp {
+  color: gray;
+}
