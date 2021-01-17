@@ -86,6 +86,7 @@ Eメール：test@gmail.com
 - has_many :favorites
 - has_many :good_evaluations
 - has_many :bad_evaluations
+- has_many :notifications
 
 
 ## articlesテーブル
@@ -104,6 +105,7 @@ Eメール：test@gmail.com
 - has_many :favorites
 - has_many :good_evaluations
 - has_many :bad_evaluations
+- has_many :notifications
 
 
 ## commentsテーブル
@@ -118,6 +120,7 @@ Eメール：test@gmail.com
 
 - belongs_to :user
 - belongs_to :article
+- has_many :notifications
 
 
 ## favoriteテーブル
@@ -168,6 +171,24 @@ Eメール：test@gmail.com
 
 ### Association
 - belongs_to :user
+
+
+## notificationsテーブル
+
+| Column     | Type    | Options                     |
+|------------|---------|-----------------------------|
+| visitor_id | integer | null: false                 |
+| visited_id | integer | null: false                 |
+| article_id | integer |                             |
+| comment_id | integer |                             |
+| action     | string  | default: '', null: false    |
+| checked    | boolean | default: false, null: false |
+
+### Association
+- belongs_to :article
+- belongs_to :comment
+
+
 
 # 要件定義
 
