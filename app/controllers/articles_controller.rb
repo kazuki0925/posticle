@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
           follow_users_articles << follow_user_article
         end
       end
-      @follow_users_articles = Kaminari.paginate_array(follow_users_articles).page(params[:follow_users_articles_page]).per(3)
+      @follow_users_articles = Kaminari.paginate_array(follow_users_articles.sort_by{ |a| -a[:id] }).page(params[:follow_users_articles_page]).per(3)
     end
   end
 
