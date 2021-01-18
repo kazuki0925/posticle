@@ -17,7 +17,7 @@ PosticleApp
 http://18.176.196.64/
 
 ### Basic認証
-ID:ksapplication
+ID:ksapplication  
 Pass:s5311031
 
 # テスト用アカウント
