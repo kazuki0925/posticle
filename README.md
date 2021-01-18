@@ -16,6 +16,10 @@ PosticleApp
 # URL	
 http://18.176.196.64/
 
+### Basic認証
+ID:ksapplication
+Pass:s5311031
+
 # テスト用アカウント
 Eメール：test@gmail.com  
 パスワード：123abc  
