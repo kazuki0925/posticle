@@ -34,6 +34,7 @@ Eメール：test@gmail.com
 ### ページネーション機能（Ajax）
 ### ランキング表示
 ### ユーザーフォロー機能（Ajax）
+### 通知機能
 
 # 実装した機能についてのGIFと説明
 ### 記事投稿 & 記事詳細表示
@@ -63,6 +64,9 @@ Eメール：test@gmail.com
 ### カテゴリー検索
 ![cartegory](https://user-images.githubusercontent.com/74653695/104407168-58ef3000-55a4-11eb-8509-b228ae3faede.gif)
 
+### 通知機能
+![notifications_1](https://user-images.githubusercontent.com/74653695/104874714-eb257880-5996-11eb-8f8d-446f220cfb53.gif)
+![notifications2](https://user-images.githubusercontent.com/74653695/104874732-f2e51d00-5996-11eb-9fed-782fdd0b63d9.gif)
 
 # 実装予定の機能
 - タグ付け機能
